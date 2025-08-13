@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AudioGyaan</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="main-header">
+    <h1>Audio<span class="highlight">Gyaan</span></h1>
+    <input type="text" id="searchInput" placeholder="Search by title..." />
+  </header>
+
+  <nav class="category-bar">
+    <button onclick="filterBooks('All')">All</button>
+    <button onclick="filterBooks('Self-Help')">Self-Help</button>
+    <button onclick="filterBooks('Finance')">Finance</button>
+    <button onclick="filterBooks('Productivity')">Productivity</button>
+    <button onclick="filterBooks('Spiritual')">Spiritual</button>
+  </nav>
+
+  <main class="container" id="bookContainer">
+    <!-- 10 Book Cards (SAMPLE) -->
+     <div class="book-card" data-category="Finance">
+      <img src="assets/richdad.png" alt="Book 1">
+      <button class="play-button">▶</button>
+      <input type="range" class="seekbar" value="0" min="0" max="100">
+      <div class="book-info">
+        <h3>Rich Dad Poor Dad</h3>
+        <p>Robert Kiyosaki</p>
+        <a href="" download class="download-btn">Download</a>
+      </div>
+      <div class="library-container"></div>
+
+      <audio src=""></audio>
+    </div>
+
+    <div class="book-card" data-category="Finance">
+      <img src="assets/psycomoney.png" alt="Book 1">
+      <button class="play-button">▶</button>
+      <input type="range" class="seekbar" value="0" min="0" max="100">
+      <div class="book-info">
+        <h3>The Psychology of Money</h3>
+        <p>Morgan Housel</p>
+        <a href="assets/" download class="download-btn">Download</a>
+      </div>
+      <div class="library-container"></div>
+      <audio src="assets/"></audio>
+    </div>
+
+    <div class="book-card" data-category="Finance">
+      <img src="assets/growrich.png" alt="Book 1">
+      <button class="play-button">▶</button>
+      <input type="range" class="seekbar" value="0" min="0" max="100">
+      <div class="book-info">
+        <h3>Think And Grow Rich</h3>
+        <p>Napoleon Hill</p>
+        <a href="assets/" download class="download-btn">Download</a>
+      </div>
+      <div class="library-container"></div>
+      <audio src="assets/"></audio>
+    </div>
+
+    <div class="book-card" data-category="Self-Help">
+      <img src="assets/atomichabits.png" alt="Book 1">
+      <button class="play-button">▶</button>
+      <input type="range" class="seekbar" value="0" min="0" max="100">
+      <div class="book-info">
+        <h3>Atomic Habits</h3>
+        <p>James clear</p>
+        <a href="assets/" download class="download-btn">Download</a>
+      </div>
+      <div class="library-container"></div>
+      <audio src="assets/"></audio>
+    </div>
+
+    <div class="book-card" data-category="Self-Help">
+      <img src="assets/fuckingrich.png" alt="Book 1">
+      <button class="play-button">▶</button>
+      <input type="range" class="seekbar" value="0" min="0" max="100">
+      <div class="book-info">
+        <h3>The Subtle Art of Not Giving A Fuck</h3>
+        <p>Mark Manson</p>
+        <a href="assets/" download class="download-btn">Download</a>
+      </div>
+      <div class="library-container"></div>
+      <audio src="assets/"></audio>
+    </div>
+
+    <div class="book-card" data-category="Self-Help">
+      <img src="assets/winfriends.png" alt="Book 1">
+      <button class="play-button">▶</button>
+      <input type="range" class="seekbar" value="0" min="0" max="100">
+      <div class="book-info">
+        <h3>How To Win Friends And Influence Pwople</h3>
+        <p>Dale Carnegie</p>
+        <a href="assets/" download class="download-btn">Download</a>
+      </div>
+      <div class="library-container"></div>
+      <audio src="assets/"></audio>
+    </div>
+
+    <div class="book-card" data-category="Self-Help">
+      <img src="assets/power of now.png" alt="Book 1">
+      <button class="play-button">▶</button>
+      <input type="range" class="seekbar" value="0" min="0" max="100">
+      <div class="book-info">
+        <h3>The Power of Now</h3>
+        <p>Eckhart Tolle</p>
+        <a href="assets/" download class="download-btn">Download</a>
+      </div>
+      <div class="library-container"></div>
+      <audio src="assets/"></audio>
+    </div>
+
+    <div class="book-card" data-category="Self-Help">
+      <img src="assets/48law.png" alt="Book 1">
+      <button class="play-button">▶</button>
+      <input type="range" class="seekbar" value="0" min="0" max="100">
+      <div class="book-info">
+        <h3>The 48 Law of Power</h3>
+        <p>Robert Greene</p>
+        <a href="assets/" download class="download-btn">Download</a>
+      </div>
+      <div class="library-container"></div>
+      <audio src="assets/"></audio>
+    </div>
+
+    <!-- Duplicate above structure for each of your 10 books (you already have this) -->
+
+  </main>
+
+  <div id="centralPlayer" class="central-player" style="display:none;">
+    <button id="backward">⏪</button>
+    <button id="playPause">▶</button>
+    <button id="forward">⏩</button>
+    <span id="nowPlaying">Now Playing: –</span>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
