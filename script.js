@@ -100,7 +100,7 @@ closePlayer.addEventListener("click", () => {
 // BOOK CARD & LIBRARY BUTTON LOGIC
 // -----------------------
 const booksData = {
-  "Rich Dad Poor Dad": ["assets/", "assets/", "assets/", "assets/richdad3.mp3"],
+  "Rich Dad Poor Dad": ["assets/frichdad1.m4a", "assets/frichdad2.m4a", "assets/frichdad3.m4a", ],
   "The Psychology of Money": ["assets/", "assets/" , "assets/"],
   "Think And Grow Rich": ["assets/grow1.mp3", "assets/grow2.mp3", "assets/grow3.mp3"],
   "Atomic Habits": ["assets/", "assets/", "assets/"],
