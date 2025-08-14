@@ -269,3 +269,119 @@ body {
   background: var(--primary);
   color: #000;
 }
+
+/* CENTRAL PLAYER STYLING */
+.central-player {
+  position: fixed;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 95%;
+  max-width: 480px;
+  background: linear-gradient(145deg, #1f1f25, #15151a);
+  border-radius: 20px;
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.7);
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.central-player .player-left,
+.central-player .player-right {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.central-player .player-left button,
+.central-player .player-right button {
+  background: var(--accent);
+  border: none;
+  padding: 0.5rem 0.8rem;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.central-player .player-left button:hover,
+.central-player .player-right button:hover {
+  background: var(--primary);
+  color: #000;
+  transform: scale(1.1);
+}
+
+.central-player #nowPlaying {
+  color: var(--text-light);
+  font-size: 0.9rem;
+  text-align: center;
+  flex: 1;
+}
+
+.central-player .close-btn {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  background: transparent;
+  border: none;
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.central-player .close-btn:hover {
+  color: var(--highlight);
+  transform: scale(1.2);
+}
+
+/* SEEKBAR STYLING */
+.central-player .seekbar {
+  width: 100%;
+  margin-top: 0.5rem;
+  accent-color: var(--primary);
+  height: 5px;
+  border-radius: 5px;
+  appearance: none;
+  cursor: pointer;
+}
+
+.central-player .seekbar::-webkit-slider-thumb {
+  appearance: none;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 2px solid var(--primary);
+  cursor: pointer;
+}
+
+.central-player .seekbar::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 2px solid var(--primary);
+  cursor: pointer;
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 768px) {
+  .central-player {
+    flex-direction: column;
+    padding: 0.8rem 1rem;
+    gap: 0.5rem;
+  }
+  .central-player #nowPlaying {
+    font-size: 0.85rem;
+  }
+  .central-player .player-left,
+  .central-player .player-right {
+    gap: 0.4rem;
+  }
+}

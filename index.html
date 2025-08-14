@@ -131,12 +131,21 @@
 
   </main>
 
-  <div id="centralPlayer" class="central-player" style="display:none;">
-    <button id="backward">⏪</button>
-    <button id="playPause">▶</button>
-    <button id="forward">⏩</button>
-    <span id="nowPlaying">Now Playing: –</span>
+
+  <div class="central-player" id="centralPlayer">
+  <button class="close-btn" id="closePlayer">✖</button>
+  
+  <div class="player-left">
+    <button id="backward">⏮️</button>
+    <button id="playPause">▶️</button>
+    <button id="forward">⏭️</button>
   </div>
+  
+  <div id="nowPlaying">Book Name - Part 1</div>
+  
+  <input type="range" class="seekbar" id="centralSeekbar" value="0" min="0" max="100">
+</div>
+
 
   <script src="script.js"></script>
 </body>

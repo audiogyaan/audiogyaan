@@ -14,50 +14,46 @@ function filterBooks(category) {
   });
 }
 
+// -----------------------
+// CENTRAL PLAYER ELEMENTS
+// -----------------------
 const centralPlayer = document.getElementById("centralPlayer");
 const playPauseBtn = document.getElementById("playPause");
 const forwardBtn = document.getElementById("forward");
 const backwardBtn = document.getElementById("backward");
 const nowPlaying = document.getElementById("nowPlaying");
+const centralSeekbar = document.getElementById("centralSeekbar");
+const closePlayer = document.getElementById("closePlayer");
 
 let currentAudio = null;
-let currentSeekbar = null;
+let seekInterval = null;
 
-document.querySelectorAll(".book-card").forEach(card => {
-  const audio = card.querySelector("audio");
-  const playBtn = card.querySelector(".play-button");
-  const seekbar = card.querySelector(".seekbar");
-  const title = card.querySelector("h3").textContent;
+// -----------------------
+// FUNCTION TO OPEN CENTRAL PLAYER
+// -----------------------
+function openCentralPlayer(audio, title) {
+  if (currentAudio && currentAudio !== audio) {
+    currentAudio.pause();
+    currentAudio.currentTime = 0;
+  }
 
-  playBtn.addEventListener("click", () => {
-    if (currentAudio && currentAudio !== audio) {
-      currentAudio.pause();
-      currentAudio.currentTime = 0;
-    }
+  currentAudio = audio;
+  centralPlayer.style.display = "flex";
+  nowPlaying.textContent = `Now Playing: ${title}`;
+  audio.play();
+  playPauseBtn.textContent = "⏸";
 
-    currentAudio = audio;
-    currentSeekbar = seekbar;
-    audio.play();
-    playPauseBtn.textContent = "⏸";
-    nowPlaying.textContent = `Now Playing: ${title}`;
-    centralPlayer.style.display = "flex";
-  });
-
-  // Seekbar Sync
-  audio.addEventListener("timeupdate", () => {
+  clearInterval(seekInterval);
+  seekInterval = setInterval(() => {
     if (!isNaN(audio.duration)) {
-      seekbar.value = (audio.currentTime / audio.duration) * 100;
+      centralSeekbar.value = (audio.currentTime / audio.duration) * 100;
     }
-  });
+  }, 500);
+}
 
-  // Drag to Seek
-  seekbar.addEventListener("input", () => {
-    if (!isNaN(audio.duration)) {
-      audio.currentTime = (seekbar.value / 100) * audio.duration;
-    }
-  });
-});
-
+// -----------------------
+// PLAY/PAUSE BUTTON
+// -----------------------
 playPauseBtn.addEventListener("click", () => {
   if (!currentAudio) return;
   if (currentAudio.paused) {
@@ -69,6 +65,9 @@ playPauseBtn.addEventListener("click", () => {
   }
 });
 
+// -----------------------
+// FORWARD / BACKWARD BUTTONS
+// -----------------------
 forwardBtn.addEventListener("click", () => {
   if (currentAudio) currentAudio.currentTime += 10;
 });
@@ -76,6 +75,30 @@ forwardBtn.addEventListener("click", () => {
 backwardBtn.addEventListener("click", () => {
   if (currentAudio) currentAudio.currentTime -= 10;
 });
+
+// -----------------------
+// SEEKBAR DRAG
+// -----------------------
+centralSeekbar.addEventListener("input", () => {
+  if (currentAudio && !isNaN(currentAudio.duration)) {
+    currentAudio.currentTime = (centralSeekbar.value / 100) * currentAudio.duration;
+  }
+});
+
+// -----------------------
+// CLOSE PLAYER
+// -----------------------
+closePlayer.addEventListener("click", () => {
+  if (currentAudio) currentAudio.pause();
+  centralPlayer.style.display = "none";
+  clearInterval(seekInterval);
+  centralSeekbar.value = 0;
+  playPauseBtn.textContent = "▶";
+});
+
+// -----------------------
+// BOOK CARD & LIBRARY BUTTON LOGIC
+// -----------------------
 const booksData = {
   "Rich Dad Poor Dad": ["assets/", "assets/", "assets/", "assets/richdad3.mp3"],
   "The Psychology of Money": ["assets/", "assets/" , "assets/"],
@@ -84,49 +107,39 @@ const booksData = {
   "The Subtle Art of Not Giving A Fuck": ["assets/grow1.mp3", "assets/grow2.mp3", "assets/grow3.mp3"],
   "How To Win Friends And Influence Pwople": ["assets/grow1.mp3", "assets/grow2.mp3", "assets/grow3.mp3"],
   "The Power of Now": ["assets/grow1.mp3", "assets/grow2.mp3", "assets/grow3.mp3"],
-  "The 48 Law of Power": ["assets/grow1.mp3", "assets/grow2.mp3", "assets/grow3.mp3"],
-  // Add for all books...
+  "The 48 Law of Power": ["assets/grow1.mp3", "assets/grow2.mp3", "assets/grow3.mp3"]
 };
 
 document.querySelectorAll(".book-card").forEach(card => {
   const audio = card.querySelector("audio");
   const playBtn = card.querySelector(".play-button");
-  const seekbar = card.querySelector(".seekbar");
   const title = card.querySelector("h3").textContent;
   const libraryContainer = card.querySelector(".library-container");
 
+  // MAIN PLAY BUTTON
   playBtn.addEventListener("click", () => {
-    // Close other libraries
+    openCentralPlayer(audio, title);
+
+    // CLOSE OTHER LIBRARIES
     document.querySelectorAll(".library-container").forEach(lib => {
       if (lib !== libraryContainer) lib.style.display = "none";
     });
 
-    // Toggle current library
+    // TOGGLE CURRENT LIBRARY
     if (libraryContainer.style.display === "flex") {
       libraryContainer.style.display = "none";
       return;
     }
 
-    libraryContainer.innerHTML = ""; // Clear previous
+    libraryContainer.innerHTML = ""; // CLEAR PREVIOUS
 
     const parts = booksData[title] || [audio.src]; // fallback to single part
-
     parts.forEach((src, index) => {
       const btn = document.createElement("button");
       btn.textContent = `Part ${index + 1}`;
       btn.addEventListener("click", () => {
-        if (currentAudio) {
-          currentAudio.pause();
-          currentAudio.currentTime = 0;
-        }
-
         audio.src = src;
-        audio.play();
-        currentAudio = audio;
-        currentSeekbar = seekbar;
-        nowPlaying.textContent = `Now Playing: ${title} - Part ${index + 1}`;
-        centralPlayer.style.display = "flex";
-        playPauseBtn.textContent = "⏸";
+        openCentralPlayer(audio, `${title} - Part ${index + 1}`);
       });
       libraryContainer.appendChild(btn);
     });
@@ -134,16 +147,10 @@ document.querySelectorAll(".book-card").forEach(card => {
     libraryContainer.style.display = "flex";
   });
 
-  // existing timeupdate and input listeners
+  // SEEKBAR SYNC FOR EACH CARD
   audio.addEventListener("timeupdate", () => {
     if (!isNaN(audio.duration)) {
-      seekbar.value = (audio.currentTime / audio.duration) * 100;
-    }
-  });
-
-  seekbar.addEventListener("input", () => {
-    if (!isNaN(audio.duration)) {
-      audio.currentTime = (seekbar.value / 100) * audio.duration;
+      centralSeekbar.value = (audio.currentTime / audio.duration) * 100;
     }
   });
 
