@@ -103,7 +103,7 @@ const booksData = {
   "Rich Dad Poor Dad": ["assets/frichdad1.m4a", "assets/frichdad2.m4a", "assets/frichdad3.m4a", ],
   "The Psychology of Money": ["assets/", "assets/" , "assets/"],
   "Think And Grow Rich": ["assets/grow1.mp3", "assets/grow2.mp3", "assets/grow3.mp3"],
-  "Atomic Habits": ["assets/", "assets/", "assets/"],
+  "Atomic Habits": ["assets/fatomic1.m4a", "assets/fatomic2.m4a", "assets/fatomic3.m4a"],
   "The Subtle Art of Not Giving A Fuck": ["assets/grow1.mp3", "assets/grow2.mp3", "assets/grow3.mp3"],
   "How To Win Friends And Influence Pwople": ["assets/grow1.mp3", "assets/grow2.mp3", "assets/grow3.mp3"],
   "The Power of Now": ["assets/grow1.mp3", "assets/grow2.mp3", "assets/grow3.mp3"],
