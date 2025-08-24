@@ -159,3 +159,4 @@ document.querySelectorAll(".book-card").forEach(card => {
     centralPlayer.style.display = "none";
   });
 });
+
