@@ -105,7 +105,7 @@ const booksData = {
   "Think And Grow Rich": ["assets/ftr1.m4a", "assets/ftr2.m4a", "assets/ftr3.m4a"],
   "Atomic Habits": ["assets/fatomic1.m4a", "assets/fatomic2.m4a", "assets/fatomic3.m4a"],
   "The Subtle Art of Not Giving A Fuck": ["assets/fuck1.m4a", "assets/fuck2.m4a", "assets/fuck3.m4a"],
-  "How To Win Friends And Influence Pwople": ["assets/grow1.mp3", "assets/grow2.mp3", "assets/grow3.mp3"],
+    "How To Win Friends And Influence People": ["assets/friend1.m4a", "assets/friend2.m4a", "assets/friend3.m4a"],
   "The Power of Now": ["assets/grow1.mp3", "assets/grow2.mp3", "assets/grow3.mp3"],
   "The 48 Law of Power": ["assets/grow1.mp3", "assets/grow2.mp3", "assets/grow3.mp3"]
 };
