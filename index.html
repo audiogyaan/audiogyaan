@@ -10,6 +10,9 @@
   <header class="main-header">
     <h1>Audio<span class="highlight">Gyaan</span></h1>
     <input type="text" id="searchInput" placeholder="Search by title..." />
+    
+<button id="openFavorites" class="open-fav-btn" aria-label="Open Favorites">❤️ My Favorites</button>
+
   </header>
 
   <nav class="category-bar">
@@ -30,6 +33,12 @@
         <h3>Rich Dad Poor Dad</h3>
         <p>Robert Kiyosaki</p>
         <a href="assets/frichdad1.m4a" download class="download-btn">Download</a>
+        <div class="book-info">
+
+  <!-- NEW: favorite button -->
+  <button class="favorite-btn" aria-pressed="false" title="Add to Favorites">🤍</button>
+</div>
+
       </div>
       
       <div class="library-container"></div>
@@ -44,6 +53,8 @@
         <h3>The Psychology of Money</h3>
         <p>Morgan Housel</p>
         <a href="assets/fpsy1.m4a" download class="download-btn">Download</a>
+        <!-- NEW: favorite button -->
+  <button class="favorite-btn" aria-pressed="false" title="Add to Favorites">🤍</button>
       </div>
       <div class="library-container"></div>
       <audio src="assets/fpsy1.m4a"></audio>
@@ -57,6 +68,8 @@
         <h3>How To Win Friends And Influence People</h3>
         <p>Dale Carnegie</p>
         <a href="assets/frichdad1.m4a" download class="download-btn">Download</a>
+        <!-- NEW: favorite button -->
+  <button class="favorite-btn" aria-pressed="false" title="Add to Favorites">🤍</button>
       </div>
       <div class="library-container"></div>
       <audio src="assets/frichdad1.m4a"></audio>
@@ -71,6 +84,8 @@
         <h3>Atomic Habits</h3>
         <p>James Clear</p>
         <a href="assets/fatomic1.m4a" download class="download-btn">Download</a>
+        <!-- NEW: favorite button -->
+  <button class="favorite-btn" aria-pressed="false" title="Add to Favorites">🤍</button>
       </div>
       <div class="library-container"></div>
       <audio src="assets/fatomic1.m4a"></audio>
@@ -84,6 +99,8 @@
         <h3>Think And Grow Rich</h3>
         <p>Naponeon Hill</p>
         <a href="assets/ftr1.m4a" download class="download-btn">Download</a>
+        <!-- NEW: favorite button -->
+  <button class="favorite-btn" aria-pressed="false" title="Add to Favorites">🤍</button>
       </div>
       <div class="library-container"></div>
       <audio src="assets/ftr1.m4a"></audio>
@@ -97,6 +114,8 @@
         <h3>The Subtle Art of Not Giving A Fuck</h3>
         <p>Mark Manson</p>
         <a href="assets/fuck1.m4a" download class="download-btn">Download</a>
+          <!-- NEW: favorite button -->
+  <button class="favorite-btn" aria-pressed="false" title="Add to Favorites">🤍</button>
       </div>
       <div class="library-container"></div>
       <audio src="assets/fuck1.m4a"></audio>
@@ -112,6 +131,8 @@
         <h3>The Power of Now</h3>
         <p>Eckhart Tolle</p>
         <a href="assets/" download class="download-btn">Download</a>
+        <!-- NEW: favorite button -->
+  <button class="favorite-btn" aria-pressed="false" title="Add to Favorites">🤍</button>
       </div>
       <div class="library-container"></div>
       <audio src="assets/"></audio>
@@ -125,6 +146,8 @@
         <h3>The 48 Laws of Power</h3>
         <p>Robert Greene</p>
         <a href="assets/" download class="download-btn">Download</a>
+        <!-- NEW: favorite button -->
+  <button class="favorite-btn" aria-pressed="false" title="Add to Favorites">🤍</button>
       </div>
       <div class="library-container"></div>
       <audio src="assets/"></audio>
@@ -138,6 +161,8 @@
         <h3>Bhagwat Geeta</h3>
         <p>By Vedavyasa</p>
         <a href="assets/" download class="download-btn">Download</a>
+        <!-- NEW: favorite button -->
+  <button class="favorite-btn" aria-pressed="false" title="Add to Favorites">🤍</button>
       </div>
       <div class="library-container"></div>
       <audio src="assets/"></audio>
@@ -151,6 +176,8 @@
         <h3>The Quran</h3>
         <p>By Allah</p>
         <a href="assets/" download class="download-btn">Download</a>
+        <!-- NEW: favorite button -->
+  <button class="favorite-btn" aria-pressed="false" title="Add to Favorites">🤍</button>
       </div>
       <div class="library-container"></div>
       <audio src="assets/"></audio>
@@ -174,6 +201,20 @@
     
     <input type="range" class="seekbar" id="centralSeekbar" value="0" min="0" max="100">
   </div>
+<!-- Favorites Modal -->
+<div id="favoritesModal" class="favorites-modal" aria-hidden="true">
+  <div class="favorites-content">
+    <button class="close-fav" aria-label="Close favorites">✖</button>
+    <h2>🤍 Your Favorites</h2>
+
+    <!-- favorites list will render here -->
+    <div id="favoritesList"></div>
+
+    <div class="fav-actions">
+      <button id="favClearAll" type="button">Clear All</button>
+    </div>
+  </div>
+</div>
 
   <script src="script.js"></script>
 </body>

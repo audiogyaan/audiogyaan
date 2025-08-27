@@ -173,3 +173,169 @@ function filterBooks(category) {
     }
   });
 }
+// ====== FAVORITES / PLAYLIST (drop-in) ======
+(function(){
+  const LS_KEY = 'ag_favorites_v1';
+  const modal = document.getElementById('favoritesModal');
+  const favoritesList = document.getElementById('favoritesList');
+  const openBtn = document.getElementById('openFavorites');
+  const closeBtn = document.querySelector('.close-fav');
+  const clearBtn = document.getElementById('favClearAll');
+
+  // load favorites (array of objects {id,title,audio,image})
+  let favorites = JSON.parse(localStorage.getItem(LS_KEY) || '[]');
+
+  // helper: slugify title -> id
+  function slugify(s){
+    return String(s || '').toLowerCase().trim().replace(/[^a-z0-9]+/g,'-').replace(/(^-|-$)/g,'');
+  }
+
+  // get canonical card data from a .book-card element
+  function cardData(card){
+    const titleEl = card.querySelector('h3');
+    const title = titleEl ? titleEl.innerText.trim() : 'Untitled';
+    const id = card.dataset.id || slugify(title);
+    const audioEl = card.querySelector('audio');
+    const audio = audioEl ? (audioEl.src || audioEl.getAttribute('src')) : (card.dataset.audio || '');
+    const imgEl = card.querySelector('img');
+    const image = imgEl ? (imgEl.src || imgEl.getAttribute('src')) : '';
+    return { id, title, audio, image };
+  }
+
+  function save(){ localStorage.setItem(LS_KEY, JSON.stringify(favorites)); }
+  function isFav(id){ return favorites.some(f => f.id === id); }
+
+  // update all favorite buttons UI
+  function markButtons(){
+    document.querySelectorAll('.book-card').forEach(card => {
+      const btn = card.querySelector('.favorite-btn');
+      if(!btn) return;
+      const id = card.dataset.id || slugify(card.querySelector('h3').innerText);
+      if(isFav(id)){
+        btn.classList.add('active');
+        btn.setAttribute('aria-pressed','true');
+        btn.textContent = '❤️';
+      } else {
+        btn.classList.remove('active');
+        btn.setAttribute('aria-pressed','false');
+        btn.textContent = '🤍';
+      }
+    });
+  }
+
+  // render favorites modal list
+  function renderList(){
+    favoritesList.innerHTML = '';
+    if(favorites.length === 0){
+      favoritesList.innerHTML = '<p style="opacity:.8; text-align:center;">No favorites yet.</p>';
+      return;
+    }
+    favorites.forEach(item => {
+      const row = document.createElement('div');
+      row.className = 'favorite-item';
+      row.innerHTML = `
+        <div class="meta">
+          <img class="fav-thumb" src="${item.image || 'assets/default-thumb.png'}" alt="${item.title}">
+          <div class="fav-title">${item.title}</div>
+        </div>
+        <div class="row-actions">
+          <button class="icon-btn fav-play" data-id="${item.id}" title="Play">▶</button>
+          <button class="icon-btn fav-remove" data-id="${item.id}" title="Remove">❌</button>
+        </div>
+      `;
+      favoritesList.appendChild(row);
+    });
+  }
+
+  // toggle favorite for a card
+  function toggleFavForCard(card){
+    const data = cardData(card);
+    if(isFav(data.id)){
+      favorites = favorites.filter(f => f.id !== data.id);
+    } else {
+      favorites.push(data);
+    }
+    save();
+    markButtons();
+    renderList();
+  }
+
+  // play book from favorites (tries to find existing audio element, fallback to new Audio())
+  function playFromFavorite(id){
+    const book = favorites.find(f => f.id === id);
+    if(!book) return;
+    // find matching card's audio element first
+    const card = [...document.querySelectorAll('.book-card')].find(c => (c.dataset.id || slugify(c.querySelector('h3').innerText)) === id);
+    if(card){
+      const audioEl = card.querySelector('audio');
+      if(audioEl){
+        openCentralPlayer(audioEl, book.title);
+        modal.style.display = 'none';
+        return;
+      }
+    }
+    // fallback: create temporary Audio element and play
+    const tmp = new Audio(book.audio);
+    // append to DOM so openCentralPlayer's interval etc can work (optional)
+    tmp.style.display = 'none';
+    document.body.appendChild(tmp);
+    openCentralPlayer(tmp, book.title);
+    modal.style.display = 'none';
+  }
+
+  // remove favorite by id
+  function removeFavorite(id){
+    favorites = favorites.filter(f => f.id !== id);
+    save();
+    renderList();
+    markButtons();
+  }
+
+  // Delegated click handling (favorite toggle on cards + modal play/remove)
+  document.addEventListener('click', (e) => {
+    // favorite button on card
+    const favBtn = e.target.closest('.favorite-btn');
+    if(favBtn){
+      const card = favBtn.closest('.book-card');
+      if(!card) return;
+      toggleFavForCard(card);
+      return;
+    }
+
+    // play from favorites
+    const playBtn = e.target.closest('.fav-play');
+    if(playBtn){
+      playFromFavorite(playBtn.dataset.id);
+      return;
+    }
+
+    // remove from favorites
+    const remBtn = e.target.closest('.fav-remove');
+    if(remBtn){
+      removeFavorite(remBtn.dataset.id);
+      return;
+    }
+  });
+
+  // open/close modal
+  if(openBtn) openBtn.addEventListener('click', () => {
+    renderList();
+    modal.style.display = 'block';
+  });
+  if(closeBtn) closeBtn.addEventListener('click', () => modal.style.display = 'none');
+  window.addEventListener('click', (e) => { if(e.target === modal) modal.style.display = 'none'; });
+
+  // clear all
+  if(clearBtn) clearBtn.addEventListener('click', () => {
+    if(!confirm('Clear all favorites?')) return;
+    favorites = [];
+    save();
+    renderList();
+    markButtons();
+  });
+
+  // init UI on load
+  markButtons();
+  renderList();
+
+})();

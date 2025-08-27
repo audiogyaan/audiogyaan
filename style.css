@@ -686,3 +686,142 @@ body {
   font-weight: 600;
   box-shadow: 0 0 15px var(--accent);
 }
+
+/* Favorites UI */
+.open-fav-btn{
+  margin-left:12px;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  color:#000;
+  border:none;
+  padding:0.5rem 0.9rem;
+  border-radius:999px;
+  cursor:pointer;
+  font-weight:700;
+  box-shadow:0 6px 18px rgba(0,0,0,0.5);
+}
+
+.favorite-btn{
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.06);
+  padding:0.35rem 0.6rem;
+  border-radius:10px;
+  cursor:pointer;
+  transition: transform 0.15s, background 0.15s;
+}
+.favorite-btn[aria-pressed="true"], .favorite-btn.active{
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  color:#000;
+  transform: scale(1.08);
+}
+
+/* Modal */
+.favorites-modal{
+  display:none;
+  position:fixed;
+  inset:0;
+  background: rgba(0,0,0,0.6);
+  z-index:2000;
+  backdrop-filter: blur(6px);
+}
+.favorites-content{
+  width:92%;
+  max-width:520px;
+  margin:6% auto;
+  background: var(--card-bg);
+  padding:1rem;
+  border-radius:14px;
+  box-shadow:0 18px 40px var(--shadow-dark);
+  border:1px solid rgba(255,255,255,0.04);
+}
+.favorites-content h2{ color:var(--primary); text-align:center; margin:0 0 0.8rem; }
+.close-fav{ float:right; background:none; border:none; font-size:18px; cursor:pointer; color:var(--text-muted); }
+#favoritesList{ display:flex; flex-direction:column; gap:0.6rem; max-height:55vh; overflow:auto; padding-right:6px; }
+
+/* favorite item row */
+.favorite-item{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  justify-content:space-between;
+  background: rgba(255,255,255,0.02);
+  padding:0.6rem;
+  border-radius:10px;
+  border:1px solid rgba(255,255,255,0.02);
+}
+.favorite-item .meta{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  min-width:0;
+}
+.fav-thumb{ width:48px; height:48px; object-fit:cover; border-radius:8px; }
+.fav-title{ font-weight:600; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; max-width:220px; color:var(--text-light); }
+.row-actions{ display:flex; gap:8px; margin-left:auto; }
+.icon-btn{
+  background: none; border:1px solid rgba(255,255,255,0.06);
+  padding:0.35rem 0.55rem; border-radius:10px; cursor:pointer;
+}
+.icon-btn:hover{ transform:scale(1.06); background:linear-gradient(90deg,var(--primary),var(--accent)); color:#000; }
+
+.fav-actions{ display:flex; justify-content:flex-end; margin-top:0.6rem; gap:8px; }
+#favClearAll{ background:var(--glass); border:1px solid rgba(255,255,255,0.06); padding:0.45rem 0.8rem; border-radius:10px; cursor:pointer; }
+#favClearAll:hover{ background:var(--primary); color:#000; }
+/* Floating Favorites Button */
+#openFavorites {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background: linear-gradient(135deg, #ffcc00, #ff9900);
+  color: #111;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 50px;
+  padding: 14px 22px;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+#openFavorites:hover {
+  transform: scale(1.1);
+  background: linear-gradient(135deg, #ffd633, #ffb84d);
+  box-shadow: 0 8px 22px rgba(0,0,0,0.5);
+}
+
+/* Book Card Star (Add to Favorites) */
+.book-card {
+  position: relative; /* so star stays inside card */
+  overflow: hidden;
+}
+
+.favorite-btn {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: rgba(255, 215, 0, 0.9);
+  border: none;
+  border-radius: 50%;
+  font-size: 22px;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  transition: all 0.25s ease-in-out;
+}
+
+.favorite-btn:hover {
+  transform: scale(1.15);
+  background: gold;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.4);
+}
+
+/* If book is already in favorites */
+.favorite-btn.active {
+  background: linear-gradient(135deg, #ffcc00, #ff6600);
+  color: white;
+}
