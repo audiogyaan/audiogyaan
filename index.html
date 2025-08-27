@@ -14,15 +14,15 @@
 
   <nav class="category-bar">
     <button onclick="filterBooks('All')">All</button>
+    <button onclick="filterBooks('Trending')">Trending</button>
     <button onclick="filterBooks('Self-Help')">Self-Help</button>
     <button onclick="filterBooks('Finance')">Finance</button>
-    <button onclick="filterBooks('Productivity')">Productivity</button>
     <button onclick="filterBooks('Spiritual')">Spiritual</button>
   </nav>
 
   <main class="container" id="bookContainer">
     <!-- Finance -->
-    <div class="book-card" data-category="Finance">
+    <div class="book-card" data-category="Finance Trending">
       <img src="assets/richdad.png" alt="Rich Dad Poor Dad">
       <button class="play-button">▶</button>
       
@@ -36,7 +36,7 @@
       <audio src="assets/frichdad1.m4a"></audio>
     </div>
 
-    <div class="book-card" data-category="Finance">
+    <div class="book-card" data-category="Finance Trending">
       <img src="assets/psycomoney.png" alt="The Psychology of Money">
       <button class="play-button">▶</button>
       
@@ -49,7 +49,7 @@
       <audio src="assets/fpsy1.m4a"></audio>
     </div>
 
-    <div class="book-card" data-category="Self-Help">
+    <div class="book-card" data-category="Self-Help Trending">
       <img src="assets/winfriends.png" alt="How To Win Friends And Influence People">
       <button class="play-button">▶</button>
       
@@ -76,7 +76,20 @@
       <audio src="assets/fatomic1.m4a"></audio>
     </div>
 
-    <div class="book-card" data-category="Self-Help">
+    <div class="book-card" data-category="Finance">
+      <img src="assets/growrich.png" alt="Think And Grow Rich">
+      <button class="play-button">▶</button>
+      
+      <div class="book-info">
+        <h3>Think And Grow Rich</h3>
+        <p>Naponeon Hill</p>
+        <a href="assets/ftr1.m4a" download class="download-btn">Download</a>
+      </div>
+      <div class="library-container"></div>
+      <audio src="assets/ftr1.m4a"></audio>
+    </div>
+
+    <div class="book-card" data-category="Self-Help Trending">
       <img src="assets/fuckingrich.png" alt="The Subtle Art of Not Giving A Fuck">
       <button class="play-button">▶</button>
       

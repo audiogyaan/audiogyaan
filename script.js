@@ -160,3 +160,16 @@ document.querySelectorAll(".book-card").forEach(card => {
   });
 });
 
+function filterBooks(category) {
+  const books = document.querySelectorAll(".book-card");
+
+  books.forEach(book => {
+    const categories = book.getAttribute("data-category").split(" ");
+
+    if (category === "All" || categories.includes(category)) {
+      book.style.display = "block";
+    } else {
+      book.style.display = "none";
+    }
+  });
+}
