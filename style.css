@@ -872,3 +872,7 @@ body {
   background: linear-gradient(135deg, #ffd633, #ffb84d);
   box-shadow: 0 8px 22px rgba(0,0,0,0.5);
 }
+#centralPlayer {
+  display: none; /* by default hidden */
+}
+
