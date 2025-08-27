@@ -850,3 +850,25 @@ body {
   background: linear-gradient(135deg, #ffd633, #ffb84d);
   box-shadow: 0 8px 22px rgba(0,0,0,0.5);
 }
+#openFavorites {
+  position: fixed;
+  bottom: 140px;   /* Pehle 100px tha, ab 140px kiya */
+  right: 25px;
+  background: linear-gradient(135deg, #ffcc00, #ff9900);
+  color: #111;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 50px;
+  padding: 14px 22px;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+  transition: all 0.3s ease;
+  z-index: 1100;
+}
+
+#openFavorites:hover {
+  transform: scale(1.1);
+  background: linear-gradient(135deg, #ffd633, #ffb84d);
+  box-shadow: 0 8px 22px rgba(0,0,0,0.5);
+}
