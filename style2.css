@@ -150,4 +150,80 @@ body {
   background: linear-gradient(135deg, #2575fc 0%, #6a11cb 100%);
   transform: scale(1.03);
   box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2);
+}/* Modal Background */
+.confirmation-modal {
+  display: none; /* initially hidden */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  z-index: 9999;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.4s ease forwards;
+}
+
+/* Modal Box */
+.confirmation-modal .modal-content {
+  background: #4CAF50;
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+  color: #fff;
+  max-width: 400px;
+  width: 90%;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  transform: translateY(-20px);
+  animation: slideUp 0.4s ease forwards;
+}
+
+/* Checkmark */
+.confirmation-modal .checkmark {
+  font-size: 40px;
+  margin-bottom: 15px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes slideUp {
+  from {transform: translateY(-20px); opacity: 0;}
+  to {transform: translateY(0); opacity: 1;}
+}
+.order-success-screen {
+  display: none; /* initially hidden */
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff; /* ya transparent agar image cover kare */
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  flex-direction: column;
+}
+
+.order-success-screen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.back-button {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: rgba(0,0,0,0.5);
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  z-index: 10000;
 }
