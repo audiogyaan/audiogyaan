@@ -100,15 +100,23 @@ closePlayer.addEventListener("click", () => {
 // BOOK CARD & LIBRARY BUTTON LOGIC
 // -----------------------
 const booksData = {
-  "Rich Dad Poor Dad": ["assets/frichdad1.m4a", "assets/frichdad2.m4a", "assets/frichdad3.m4a", ],
-  "The Psychology of Money": ["assets/fpsy1.m4a", "assets/fpsy2.m4a" , "assets/fpsy3.m4a"],
+  "Rich Dad Poor Dad": ["assets/frichdad1.m4a", "assets/frichdad2.m4a", "assets/frichdad3.m4a"],
+  "The Psychology Of Money": ["assets/fpsy1.m4a", "assets/fpsy2.m4a", "assets/fpsy3.m4a"],
   "Think And Grow Rich": ["assets/ftr1.m4a", "assets/ftr2.m4a", "assets/ftr3.m4a"],
   "Atomic Habits": ["assets/fatomic1.m4a", "assets/fatomic2.m4a", "assets/fatomic3.m4a"],
   "The Subtle Art of Not Giving A Fuck": ["assets/fuck1.m4a", "assets/fuck2.m4a", "assets/fuck3.m4a"],
-    "How To Win Friends And Influence People": ["assets/friend1.m4a", "assets/friend2.m4a", "assets/friend3.m4a"],
+  "How To Win Friends And Influence People": ["assets/friend1.m4a", "assets/friend2.m4a", "assets/friend3.m4a"],
   "The Power of Now": ["assets/grow1.mp3", "assets/grow2.mp3", "assets/grow3.mp3"],
-  "The 48 Law of Power": ["assets/grow1.mp3", "assets/grow2.mp3", "assets/grow3.mp3"]
+  "The 48 Laws of Power": ["assets/grow1.mp3", "assets/grow2.mp3", "assets/grow3.mp3"],
+  "Zero To One": ["assets/zero2one1.m4a", "assets/zero2one2.m4a", "assets/zero2one3.m4a"],
+
+  // ✅ missing comma fixed here
+  "Eat That Froge": ["assets/froge1.mp3", "assets/froge2.mp3", "assets/froge3.mp3"],
+  "Dopamin Detox": ["assets/detox1.mp3", "assets/detox2.mp3", "assets/detox3.mp3"],
+  "Bhagwat Geeta": ["assets/geeta1.mp3", "assets/geeta2.mp3", "assets/geeta3.mp3"],
+  "The Quran": ["assets/quran1.mp3", "assets/quran2.mp3", "assets/quran3.mp3"]
 };
+
 
 document.querySelectorAll(".book-card").forEach(card => {
   const audio = card.querySelector("audio");
