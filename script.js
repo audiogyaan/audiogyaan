@@ -111,7 +111,7 @@ const booksData = {
   "Zero To One": ["assets/zero2one1.m4a", "assets/zero2one2.m4a", "assets/zero2one3.m4a"],
 
   // ✅ missing comma fixed here
-  "Eat That Froge": ["assets/froge1.mp3", "assets/froge2.mp3", "assets/froge3.mp3"],
+  "Eat That Froge": ["assets/eatthatfrog1.m4a", "assets/eatthatfrog2.m4a", "assets/eatthatfrog3.m4a"],
   "Dopamin Detox": ["assets/dopamin1.m4a", "assets/dopamin2.m4a", "assets/dopamin3.m4a"],
   "Bhagwat Geeta": ["assets/geeta1.mp3", "assets/geeta2.mp3", "assets/geeta3.mp3"],
   "The Quran": ["assets/quran1.mp3", "assets/quran2.mp3", "assets/quran3.mp3"]
