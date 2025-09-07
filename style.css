@@ -1020,14 +1020,14 @@ button:active {
 
 /* Current price */
 .price-current {
-  font-size: 18px;
+  font-size: 25px;
   font-weight: 700;
   color: #ffcc00;  /* Highlighted yellow */
 }
 
 /* Old price */
 .price-old {
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 600;
   color: #999;
   text-decoration: line-through;
