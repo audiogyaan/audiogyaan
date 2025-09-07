@@ -23,10 +23,20 @@
           <label for="fullName">Full Name *</label>
         </div>
 
-        <!-- Book Name -->
-        <div class="input-group">
-          <input type="text" id="book" name="book" required readonly>
-          <label for="book">Book Name *</label>
+        <!-- Book Name & Price Side by Side -->
+        <div class="row">
+          <div class="col">
+            <div class="input-group">
+              <input type="text" id="book" name="book" required readonly>
+              <label for="book">Book Name *</label>
+            </div>
+          </div>
+          <div class="col">
+            <div class="input-group">
+              <input type="text" id="price" name="price" required readonly>
+              <label for="price">Book Price *</label>
+            </div>
+          </div>
         </div>
 
         <!-- Contact Number -->
@@ -105,6 +115,12 @@
               <label for="state">State *</label>
             </div>
           </div>
+        </div>
+
+        <!-- ✅ Cash on Delivery Checkbox -->
+        <div class="input-group checkbox-group">
+          <input type="checkbox" id="cod" name="cod" required>
+          <label for="cod">I agree to pay by <strong>Cash on Delivery</strong></label>
         </div>
 
         <!-- Submit -->

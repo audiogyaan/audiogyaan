@@ -23,7 +23,7 @@
 
   <main class="container" id="bookContainer">
 
-    <!-- BOOK CARD TEMPLATE -->
+    <!-- BOOK CARDS -->
     <div class="book-card" data-category="Finance">
       <img src="assets/richdad.png" alt="Rich Dad Poor Dad">
       <button class="play-button">▶</button>
@@ -31,8 +31,12 @@
         <h3>Rich Dad Poor Dad</h3>
         <p>Robert Kiyosaki</p>
         <a href="assets/frichdad1.m4a" download class="download-btn">Download</a>
-        <button class="buy-btn" onclick="location.href='buy.html?book=Rich Dad Poor Dad'">Buy</button>
-        <button class="favorite-btn" aria-pressed="false" title="Add to Favorites">🤍</button>
+        <div class="buy-price">
+         <button class="buy-btn" onclick="location.href='buy.html?book=Rich Dad Poor Dad&price=119'">Buy Now</button>
+
+          <span class="price-current">₹119</span>
+          <span class="price-old">₹299</span>
+        </div>
       </div>
       <div class="library-container"></div>
       <audio src="assets/frichdad1.m4a"></audio>
@@ -45,8 +49,11 @@
         <h3>The Psychology Of Money</h3>
         <p>Morgan Housel</p>
         <a href="assets/fpsy1.m4a" download class="download-btn">Download</a>
-        <button class="buy-btn" onclick="location.href='buy.html?book=The Psychology Of Money'">Buy</button>
-        <button class="favorite-btn" aria-pressed="false" title="Add to Favorites">🤍</button>
+        <div class="buy-price">
+          <button class="buy-btn" onclick="location.href='buy.html?book=The Psychology Of Money&price=135'">Buy Now</button>
+          <span class="price-current">₹135</span>
+          <span class="price-old">₹399</span>
+        </div>
       </div>
       <div class="library-container"></div>
       <audio src="assets/fpsy1.m4a"></audio>
@@ -59,8 +66,11 @@
         <h3>Atomic Habits</h3>
         <p>James Clear</p>
         <a href="assets/fatomic1.m4a" download class="download-btn">Download</a>
-        <button class="buy-btn" onclick="location.href='buy.html?book=Atomic Habits'">Buy</button>
-        <button class="favorite-btn" aria-pressed="false" title="Add to Favorites">🤍</button>
+        <div class="buy-price">
+          <button class="buy-btn" onclick="location.href='buy.html?book=Atomic Habits&price=119'">Buy Now</button>
+          <span class="price-current">₹119</span>
+          <span class="price-old">₹299</span>
+        </div>
       </div>
       <div class="library-container"></div>
       <audio src="assets/fatomic1.m4a"></audio>
@@ -73,26 +83,17 @@
         <h3>Eat That Froge</h3>
         <p>Brian Tracy</p>
         <a href="assets/eatthatfrog1.m4a" download class="download-btn">Download</a>
-        <button class="buy-btn" onclick="location.href='buy.html?book=Eat That Froge'">Buy</button>
-        <button class="favorite-btn" aria-pressed="false" title="Add to Favorites">🤍</button>
+        <div class="buy-price">
+          <button class="buy-btn" onclick="location.href='buy.html?book=Eat That Froge&price=120'">Buy Now</button>
+          <span class="price-current">₹120</span>
+          <span class="price-old">₹249</span>
+        </div>
       </div>
       <div class="library-container"></div>
       <audio src="assets/eatthatfrog1.m4a"></audio>
     </div>
 
-    <div class="book-card" data-category="Self-Help Trending">
-      <img src="assets/48law.png" alt="The 48 Laws of Power">
-      <button class="play-button">▶</button>
-      <div class="book-info">
-        <h3>The 48 Laws of Power</h3>
-        <p>Robert Greene</p>
-        <a href="assets/" download class="download-btn">Download</a>
-        <button class="buy-btn" onclick="location.href='buy.html?book=The 48 Laws of Power'">Buy</button>
-        <button class="favorite-btn" aria-pressed="false" title="Add to Favorites">🤍</button>
-      </div>
-      <div class="library-container"></div>
-      <audio src="assets/"></audio>
-    </div>
+    
 
     <div class="book-card" data-category="Self-Help Trending">
       <img src="assets/dopamin.png" alt="Dopamin Detox">
@@ -101,8 +102,11 @@
         <h3>Dopamin Detox</h3>
         <p>Thibaut Meurisse</p>
         <a href="assets/dopamin1.m4a" download class="download-btn">Download</a>
-        <button class="buy-btn" onclick="location.href='buy.html?book=Dopamin Detox'">Buy</button>
-        <button class="favorite-btn" aria-pressed="false" title="Add to Favorites">🤍</button>
+        <div class="buy-price">
+          <button class="buy-btn" onclick="location.href='buy.html?book=Dopamin Detox&price=129'">Buy Now</button>
+          <span class="price-current">₹129</span>
+          <span class="price-old">₹249</span>
+        </div>
       </div>
       <div class="library-container"></div>
       <audio src="assets/dopamin1.m4a"></audio>
@@ -115,8 +119,11 @@
         <h3>How To Win Friends And Influence People</h3>
         <p>Dale Carnegie</p>
         <a href="assets/friend1.m4a" download class="download-btn">Download</a>
-        <button class="buy-btn" onclick="location.href='buy.html?book=How To Win Friends And Influence People'">Buy</button>
-        <button class="favorite-btn" aria-pressed="false" title="Add to Favorites">🤍</button>
+        <div class="buy-price">
+          <button class="buy-btn" onclick="location.href='buy.html?book=How To Win Friends And Influence People&price=129'">Buy Now</button>
+          <span class="price-current">₹129</span>
+          <span class="price-old">₹349</span>
+        </div>
       </div>
       <div class="library-container"></div>
       <audio src="assets/friend1.m4a"></audio>
@@ -129,8 +136,11 @@
         <h3>Zero To One</h3>
         <p>Peter Thiel</p>
         <a href="assets/zero2one1.m4a" download class="download-btn">Download</a>
-        <button class="buy-btn" onclick="location.href='buy.html?book=Zero To One'">Buy</button>
-        <button class="favorite-btn" aria-pressed="false" title="Add to Favorites">🤍</button>
+        <div class="buy-price">
+          <button class="buy-btn" onclick="location.href='buy.html?book=Zero To One&price=140'">Buy Now</button>
+          <span class="price-current">₹140</span>
+          <span class="price-old">₹399</span>
+        </div>
       </div>
       <div class="library-container"></div>
       <audio src="assets/zero2one1.m4a"></audio>
@@ -143,8 +153,11 @@
         <h3>Think And Grow Rich</h3>
         <p>Napoleon Hill</p>
         <a href="assets/ftr1.m4a" download class="download-btn">Download</a>
-        <button class="buy-btn" onclick="location.href='buy.html?book=Think And Grow Rich'">Buy</button>
-        <button class="favorite-btn" aria-pressed="false" title="Add to Favorites">🤍</button>
+        <div class="buy-price">
+          <button class="buy-btn" onclick="location.href='buy.html?book=Think And Grow Rich&price=129'">Buy Now</button>
+          <span class="price-current">₹129</span>
+          <span class="price-old">₹299</span>
+        </div>
       </div>
       <div class="library-container"></div>
       <audio src="assets/ftr1.m4a"></audio>
@@ -157,26 +170,17 @@
         <h3>The Subtle Art of Not Giving A Fuck</h3>
         <p>Mark Manson</p>
         <a href="assets/fuck1.m4a" download class="download-btn">Download</a>
-        <button class="buy-btn" onclick="location.href='buy.html?book=The Subtle Art of Not Giving A Fuck'">Buy</button>
-        <button class="favorite-btn" aria-pressed="false" title="Add to Favorites">🤍</button>
+        <div class="buy-price">
+          <button class="buy-btn" onclick="location.href='buy.html?book=The Subtle Art of Not Giving A Fuck&price=129'">Buy Now</button>
+          <span class="price-current">₹129</span>
+          <span class="price-old">₹299</span>
+        </div>
       </div>
       <div class="library-container"></div>
       <audio src="assets/fuck1.m4a"></audio>
     </div>
 
-    <div class="book-card" data-category="Self-Help">
-      <img src="assets/power of now.png" alt="The Power of Now">
-      <button class="play-button">▶</button>
-      <div class="book-info">
-        <h3>The Power of Now</h3>
-        <p>Eckhart Tolle</p>
-        <a href="assets/" download class="download-btn">Download</a>
-        <button class="buy-btn" onclick="location.href='buy.html?book=The Power of Now'">Buy</button>
-        <button class="favorite-btn" aria-pressed="false" title="Add to Favorites">🤍</button>
-      </div>
-      <div class="library-container"></div>
-      <audio src="assets/"></audio>
-    </div>
+    
 
     <div class="book-card" data-category="Spiritual Trending">
       <img src="assets/geeta.png" alt="Bhagwat Geeta">
@@ -185,8 +189,11 @@
         <h3>Bhagwat Geeta</h3>
         <p>By Vedavyasa</p>
         <a href="assets/" download class="download-btn">Download</a>
-        <button class="buy-btn" onclick="location.href='buy.html?book=Bhagwat Geeta'">Buy</button>
-        <button class="favorite-btn" aria-pressed="false" title="Add to Favorites">🤍</button>
+        <div class="buy-price">
+          <button class="buy-btn" onclick="location.href='buy.html?book=Bhagwat Geeta&price=299'">Buy Now</button>
+          <span class="price-current">₹299</span>
+          <span class="price-old">₹499</span>
+        </div>
       </div>
       <div class="library-container"></div>
       <audio src="assets/"></audio>
@@ -199,8 +206,11 @@
         <h3>The Quran</h3>
         <p>By Allah</p>
         <a href="assets/" download class="download-btn">Download</a>
-        <button class="buy-btn" onclick="location.href='buy.html?book=The Quran'">Buy</button>
-        <button class="favorite-btn" aria-pressed="false" title="Add to Favorites">🤍</button>
+        <div class="buy-price">
+          <button class="buy-btn" onclick="location.href='buy.html?book=The Quran&price=300'">Buy Now</button>
+          <span class="price-current">₹300</span>
+          <span class="price-old">₹599</span>
+        </div>
       </div>
       <div class="library-container"></div>
       <audio src="assets/"></audio>

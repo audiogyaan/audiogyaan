@@ -952,3 +952,84 @@ button:active {
 }
 
 
+.buy-price {
+  display: flex;
+  align-items: center;       /* Buy button aur price ek hi line me */
+  justify-content: center;   /* Center me rakhega */
+  gap: 14px;                 /* Button aur price ke beech spacing */
+  margin-top: 14px;          /* Download button se thoda neeche */
+}
+
+/* Current price (highlighted) */
+.price-current {
+  font-size: 20px;
+  font-weight: 700;
+  color: #ffcc00; /* Modern highlight yellow */
+  background: rgba(255, 204, 0, 0.12);
+  padding: 4px 10px;
+  border-radius: 8px;
+  box-shadow: inset 0 0 4px rgba(255, 204, 0, 0.3);
+}
+
+/* Old price (cut) */
+.price-old {
+  font-size: 16px;
+  font-weight: 600;
+  color: #b0b0b0;
+  text-decoration: line-through;
+  opacity: 0.8;
+}
+.buy-price {
+  display: flex;
+  align-items: flex-end;      /* Buy button ke text baseline ke sath price align */
+  justify-content: center;    /* Center position */
+  gap: 18px;                  /* Button aur price ke beech clear space */
+  margin-top: 16px;           /* Download button se thoda neeche */
+}
+
+/* Current price (highlighted badge) */
+.price-current {
+  font-size: 19px;
+  font-weight: 700;
+  color: #ffcc00;
+  background: rgba(255, 204, 0, 0.15);
+  padding: 5px 12px;
+  border-radius: 12px;
+  line-height: 1.2;
+  box-shadow: inset 0 0 6px rgba(255, 204, 0, 0.25),
+              0 2px 6px rgba(0, 0, 0, 0.25);
+  transform: translateY(-2px); /* Thoda upar lift kare */
+}
+
+/* Old price (crossed-out subtle) */
+.price-old {
+  font-size: 16px;
+  font-weight: 600;
+  color: #aaa;
+  text-decoration: line-through;
+  opacity: 0.8;
+  margin-left: 6px; /* Current price se halka gap */
+}
+.buy-price {
+  display: flex;
+  align-items: center;    /* Button aur price ek hi line me */
+  justify-content: center;
+  gap: 10px;              /* Button aur price ke beech thoda gap */
+  margin-top: 12px;       /* Download button se neeche space */
+}
+
+/* Current price */
+.price-current {
+  font-size: 18px;
+  font-weight: 700;
+  color: #ffcc00;  /* Highlighted yellow */
+}
+
+/* Old price */
+.price-old {
+  font-size: 20px;
+  font-weight: 600;
+  color: #999;
+  text-decoration: line-through;
+  margin-left: 4px;
+}
