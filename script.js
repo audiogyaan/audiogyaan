@@ -114,7 +114,8 @@ const booksData = {
   "Eat That Froge": ["assets/eatthatfrog1.m4a", "assets/eatthatfrog2.m4a", "assets/eatthatfrog3.m4a"],
   "Dopamin Detox": ["assets/dopamin1.m4a", "assets/dopamin2.m4a", "assets/dopamin3.m4a"],
   "Bhagwat Geeta": ["assets/geeta1.mp3", "assets/geeta2.mp3", "assets/geeta3.mp3"],
-  "The Quran": ["assets/quran1.mp3", "assets/quran2.mp3", "assets/quran3.mp3"]
+  "The Quran": ["assets/quran1.mp3", "assets/quran2.mp3", "assets/quran3.mp3"],
+   "Can We Be Strangers Again?": ["assets/strangerspart1.m4a", "assets/strangers2.m4a", "assets/strangers3.m4a", "assets/strangers4.m4a", "assets/strangers5.m4a",]
 };
 
 
