@@ -20,6 +20,7 @@
     <button onclick="filterBooks('Self-Help')">Self-Help</button>
     <button onclick="filterBooks('Finance')">Finance</button>
     <button onclick="filterBooks('Spiritual')">Spiritual</button>
+    <button onclick="filterBooks('LoveStories')">Love Stories</button>
   </nav>
 
   <main class="container" id="bookContainer">
@@ -117,25 +118,25 @@
       <audio src="assets/eatthatfrog1.m4a"></audio>
     </div>
 
-    
-     <div class="book-card" data-category="LoveStories">
-      <img src="assets/warmth.png" alt="Warmth">
+    <div class="book-card" data-category="Spiritual Trending">
+      <img src="assets/geeta.png" alt="Bhagwat Geeta">
       <button class="play-button">▶</button>
       <div class="book-info">
-        <h3>Warmth</h3>
-        <p>Rithvik Singh</p>
-        <a href="assets/" download class="download-btn">Download</a>
+        <h3>Bhagwat Geeta</h3>
+        <p>By Vedavyasa</p>
+        <a href="assets/gita1.m4a" download class="download-btn">Download</a>
         <div class="buy-price">
-          <button class="buy-btn" onclick="location.href='buy.html?book=Warmth&price=119'">Buy Now</button>
+          <button class="buy-btn" onclick="location.href='buy.html?book=Bhagwat Geeta&price=299'">Buy Now</button>
           <button class="favorite-btn" aria-pressed="false" title="Add to Favorites">🤍</button> 
-          <span class="price-current">₹119</span>
-          <span class="price-old">₹299</span>
+          <span class="price-current">₹299</span>
+          <span class="price-old">₹499</span>
         </div>
       </div>
       <div class="library-container"></div>
-      <audio src="assets/"></audio>
+      <audio src="assets/gita1.m4a"></audio>
     </div>
-
+    
+     
     <div class="book-card" data-category="Self-Help Trending">
       <img src="assets/dopamin.png" alt="Dopamin Detox">
       <button class="play-button">▶</button>
@@ -155,13 +156,31 @@
     </div>
 
 
+     <div class="book-card" data-category="Spiritual">
+      <img src="assets/quran.png" alt="The Quran">
+      <button class="play-button">▶</button>
+      <div class="book-info">
+        <h3>The Quran</h3>
+        <p>By Allah</p>
+        <a href="assets/quran1.m4a" download class="download-btn">Download</a>
+        <div class="buy-price">
+          <button class="buy-btn" onclick="location.href='buy.html?book=The Quran&price=300'">Buy Now</button>
+          <button class="favorite-btn" aria-pressed="false" title="Add to Favorites">🤍</button> 
+          <span class="price-current">₹300</span>
+          <span class="price-old">₹599</span>
+        </div>
+      </div>
+      <div class="library-container"></div>
+      <audio src="assets/quran1.m4a"></audio>
+    </div>
+
     <div class="book-card" data-category="LoveStories">
       <img src="assets/dontlove.png" alt="I Dont Love You Any More">
       <button class="play-button">▶</button>
       <div class="book-info">
         <h3>I Dont Love You Any More</h3>
         <p>Rithvik Singh</p>
-        <a href="assets/" download class="download-btn">Download</a>
+        <a href="assets/love1.m4a" download class="download-btn">Download</a>
         <div class="buy-price">
           <button class="buy-btn" onclick="location.href='buy.html?book=I Dont Love You Any More&price=119'">Buy Now</button>
           <button class="favorite-btn" aria-pressed="false" title="Add to Favorites">🤍</button> 
@@ -170,7 +189,7 @@
         </div>
       </div>
       <div class="library-container"></div>
-      <audio src="assets/"></audio>
+      <audio src="assets/love1.m4a"></audio>
     </div>
 
 
@@ -199,7 +218,7 @@
       <div class="book-info">
         <h3>Thank You For Leaving</h3>
         <p>Rithvik Singh</p>
-        <a href="assets/" download class="download-btn">Download</a>
+        <a href="assets/leave1.m4a" download class="download-btn">Download</a>
         <div class="buy-price">
           <button class="buy-btn" onclick="location.href='buy.html?book=Thank You For Leaving&price=119'">Buy Now</button>
           <button class="favorite-btn" aria-pressed="false" title="Add to Favorites">🤍</button> 
@@ -208,7 +227,7 @@
         </div>
       </div>
       <div class="library-container"></div>
-      <audio src="assets/"></audio>
+      <audio src="assets/leave1.m4a"></audio>
     </div>
 
 
@@ -269,41 +288,8 @@
 
     
 
-    <div class="book-card" data-category="Spiritual Trending">
-      <img src="assets/geeta.png" alt="Bhagwat Geeta">
-      <button class="play-button">▶</button>
-      <div class="book-info">
-        <h3>Bhagwat Geeta</h3>
-        <p>By Vedavyasa</p>
-        <a href="assets/gita1.m4a" download class="download-btn">Download</a>
-        <div class="buy-price">
-          <button class="buy-btn" onclick="location.href='buy.html?book=Bhagwat Geeta&price=299'">Buy Now</button>
-          <button class="favorite-btn" aria-pressed="false" title="Add to Favorites">🤍</button> 
-          <span class="price-current">₹299</span>
-          <span class="price-old">₹499</span>
-        </div>
-      </div>
-      <div class="library-container"></div>
-      <audio src="assets/gita1.m4a"></audio>
-    </div>
-
-    <div class="book-card" data-category="Spiritual">
-      <img src="assets/quran.png" alt="The Quran">
-      <button class="play-button">▶</button>
-      <div class="book-info">
-        <h3>The Quran</h3>
-        <p>By Allah</p>
-        <a href="assets/quran1.m4a" download class="download-btn">Download</a>
-        <div class="buy-price">
-          <button class="buy-btn" onclick="location.href='buy.html?book=The Quran&price=300'">Buy Now</button>
-          <button class="favorite-btn" aria-pressed="false" title="Add to Favorites">🤍</button> 
-          <span class="price-current">₹300</span>
-          <span class="price-old">₹599</span>
-        </div>
-      </div>
-      <div class="library-container"></div>
-      <audio src="assets/quran1.m4a"></audio>
-    </div>
+    
+   
 
   </main>
 
