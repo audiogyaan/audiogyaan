@@ -399,3 +399,38 @@ window.addEventListener("load", function () {
     }
   }
 });
+// Psychology of Money Share Button
+const psychologyCard = document.querySelector("#the-psychology-of-money");
+
+if (psychologyCard) {
+  const shareBtn = psychologyCard.querySelector(".share-btn");
+
+  shareBtn.addEventListener("click", function () {
+    const title = "The Psychology Of Money";
+    const author = "Morgan Housel";
+    const price = "₹135";
+    const img = psychologyCard.querySelector("img").src;
+
+    // Unique slug link
+    const slug = "the-psychology-of-money";
+    const link = `https://audiogyan.online/#${slug}`;
+
+    const shareText = `📖 *${title}*
+👤 ${author}
+💰 ${price}
+🖼️ ${img}
+
+🔗 Listen here: ${link}`;
+
+    if (navigator.share) {
+      navigator.share({
+        title: title,
+        text: shareText,
+        url: link
+      }).catch(err => console.log("Share cancelled", err));
+    } else {
+      navigator.clipboard.writeText(shareText);
+      alert("Book details copied! Paste and share with your friends.");
+    }
+  });
+}
