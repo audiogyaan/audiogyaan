@@ -437,41 +437,225 @@ if (psychologyCard) {
 
 
 
-// SHARE BUTTONS FOR ALL BOOK CARDS
-document.querySelectorAll(".book-card").forEach(card => {
-  const shareBtn = card.querySelector(".share-btn");
-  if (!shareBtn) return;
+// RICH DAD POOR DAD
+document.querySelector("#rich-dad-poor-dad .share-btn").addEventListener("click", () => {
+  const bookTitle = "Rich Dad Poor Dad";
+  const link = "https://audiogyan.online/#rich-dad-poor-dad";
+  const shareText = `📖 ${bookTitle}\n🔗 ${link}`;
 
-  const bookTitle = card.querySelector("h3").innerText.trim();
-  const slug = bookTitle.replace(/\s+/g, '-').toLowerCase();
-  card.setAttribute("id", slug); // ensure unique id
-
-  shareBtn.addEventListener("click", () => {
-    const link = `https://audiogyan.online/#${slug}`;
-    const shareText = `📖 ${bookTitle}\n🔗 ${link}`;
-
-    if (navigator.share) {
-      navigator.share({
-        title: bookTitle,
-        text: shareText,
-        url: link
-      }).catch(err => console.log("Share cancelled", err));
-    } else {
-      navigator.clipboard.writeText(shareText);
-      alert("Book link copied! Paste and share with your friends.");
-    }
-  });
+  if (navigator.share) {
+    navigator.share({ title: bookTitle, text: shareText, url: link })
+      .catch(err => console.log("Share cancelled", err));
+  } else {
+    navigator.clipboard.writeText(shareText);
+    alert("Book link copied! Paste and share with your friends.");
+  }
 });
 
-// SCROLL TO SPECIFIC CARD IF LINK HAS HASH
-window.addEventListener("load", function () {
-  const hash = decodeURIComponent(window.location.hash.substring(1));
-  if (hash) {
-    const card = document.getElementById(hash);
-    if (card) {
-      card.scrollIntoView({ behavior: "smooth", block: "center" });
-      card.classList.add("highlight-card");
-      setTimeout(() => card.classList.remove("highlight-card"), 3000);
-    }
+
+// THE PSYCHOLOGY OF MONEY
+document.querySelector("#the-psychology-of-money .share-btn").addEventListener("click", () => {
+  const bookTitle = "The Psychology Of Money";
+  const link = "https://audiogyan.online/#the-psychology-of-money";
+  const shareText = `📖 ${bookTitle}\n🔗 ${link}`;
+
+  if (navigator.share) {
+    navigator.share({ title: bookTitle, text: shareText, url: link })
+      .catch(err => console.log("Share cancelled", err));
+  } else {
+    navigator.clipboard.writeText(shareText);
+    alert("Book link copied! Paste and share with your friends.");
+  }
+});
+
+
+// ATOMIC HABITS
+document.querySelector("#atomic-habits .share-btn").addEventListener("click", () => {
+  const bookTitle = "Atomic Habits";
+  const link = "https://audiogyan.online/#atomic-habits";
+  const shareText = `📖 ${bookTitle}\n🔗 ${link}`;
+
+  if (navigator.share) {
+    navigator.share({ title: bookTitle, text: shareText, url: link })
+      .catch(err => console.log("Share cancelled", err));
+  } else {
+    navigator.clipboard.writeText(shareText);
+    alert("Book link copied! Paste and share with your friends.");
+  }
+});
+
+
+// CAN WE BE STRANGERS AGAIN?
+document.querySelector("#can-we-be-strangers-again .share-btn").addEventListener("click", () => {
+  const bookTitle = "Can We Be Strangers Again?";
+  const link = "https://audiogyan.online/#can-we-be-strangers-again";
+  const shareText = `📖 ${bookTitle}\n🔗 ${link}`;
+
+  if (navigator.share) {
+    navigator.share({ title: bookTitle, text: shareText, url: link })
+      .catch(err => console.log("Share cancelled", err));
+  } else {
+    navigator.clipboard.writeText(shareText);
+    alert("Book link copied! Paste and share with your friends.");
+  }
+});
+
+
+// EAT THAT FROG
+document.querySelector("#eat-that-froge .share-btn").addEventListener("click", () => {
+  const bookTitle = "Eat That Froge";
+  const link = "https://audiogyan.online/#eat-that-froge";
+  const shareText = `📖 ${bookTitle}\n🔗 ${link}`;
+
+  if (navigator.share) {
+    navigator.share({ title: bookTitle, text: shareText, url: link })
+      .catch(err => console.log("Share cancelled", err));
+  } else {
+    navigator.clipboard.writeText(shareText);
+    alert("Book link copied! Paste and share with your friends.");
+  }
+});
+
+
+// BHAGWAT GEETA
+document.querySelector("#bhagwat-geeta .share-btn").addEventListener("click", () => {
+  const bookTitle = "Bhagwat Geeta";
+  const link = "https://audiogyan.online/#bhagwat-geeta";
+  const shareText = `📖 ${bookTitle}\n🔗 ${link}`;
+
+  if (navigator.share) {
+    navigator.share({ title: bookTitle, text: shareText, url: link })
+      .catch(err => console.log("Share cancelled", err));
+  } else {
+    navigator.clipboard.writeText(shareText);
+    alert("Book link copied! Paste and share with your friends.");
+  }
+});
+
+
+// DOPAMIN DETOX
+document.querySelector("#dopamin-detox .share-btn").addEventListener("click", () => {
+  const bookTitle = "Dopamin Detox";
+  const link = "https://audiogyan.online/#dopamin-detox";
+  const shareText = `📖 ${bookTitle}\n🔗 ${link}`;
+
+  if (navigator.share) {
+    navigator.share({ title: bookTitle, text: shareText, url: link })
+      .catch(err => console.log("Share cancelled", err));
+  } else {
+    navigator.clipboard.writeText(shareText);
+    alert("Book link copied! Paste and share with your friends.");
+  }
+});
+
+
+// THE QURAN
+document.querySelector("#the-quran .share-btn").addEventListener("click", () => {
+  const bookTitle = "The Quran";
+  const link = "https://audiogyan.online/#the-quran";
+  const shareText = `📖 ${bookTitle}\n🔗 ${link}`;
+
+  if (navigator.share) {
+    navigator.share({ title: bookTitle, text: shareText, url: link })
+      .catch(err => console.log("Share cancelled", err));
+  } else {
+    navigator.clipboard.writeText(shareText);
+    alert("Book link copied! Paste and share with your friends.");
+  }
+});
+
+
+// I DONT LOVE YOU ANY MORE
+document.querySelector("#i-dont-love-you-any-more .share-btn").addEventListener("click", () => {
+  const bookTitle = "I Dont Love You Any More";
+  const link = "https://audiogyan.online/#i-dont-love-you-any-more";
+  const shareText = `📖 ${bookTitle}\n🔗 ${link}`;
+
+  if (navigator.share) {
+    navigator.share({ title: bookTitle, text: shareText, url: link })
+      .catch(err => console.log("Share cancelled", err));
+  } else {
+    navigator.clipboard.writeText(shareText);
+    alert("Book link copied! Paste and share with your friends.");
+  }
+});
+
+
+// HOW TO WIN FRIENDS AND INFLUENCE PEOPLE
+document.querySelector("#how-to-win-friends-and-influence-people .share-btn").addEventListener("click", () => {
+  const bookTitle = "How To Win Friends And Influence People";
+  const link = "https://audiogyan.online/#how-to-win-friends-and-influence-people";
+  const shareText = `📖 ${bookTitle}\n🔗 ${link}`;
+
+  if (navigator.share) {
+    navigator.share({ title: bookTitle, text: shareText, url: link })
+      .catch(err => console.log("Share cancelled", err));
+  } else {
+    navigator.clipboard.writeText(shareText);
+    alert("Book link copied! Paste and share with your friends.");
+  }
+});
+
+
+// THANK YOU FOR LEAVING
+document.querySelector("#thank-you-for-leaving .share-btn").addEventListener("click", () => {
+  const bookTitle = "Thank You For Leaving";
+  const link = "https://audiogyan.online/#thank-you-for-leaving";
+  const shareText = `📖 ${bookTitle}\n🔗 ${link}`;
+
+  if (navigator.share) {
+    navigator.share({ title: bookTitle, text: shareText, url: link })
+      .catch(err => console.log("Share cancelled", err));
+  } else {
+    navigator.clipboard.writeText(shareText);
+    alert("Book link copied! Paste and share with your friends.");
+  }
+});
+
+
+// ZERO TO ONE
+document.querySelector("#zero-to-one .share-btn").addEventListener("click", () => {
+  const bookTitle = "Zero To One";
+  const link = "https://audiogyan.online/#zero-to-one";
+  const shareText = `📖 ${bookTitle}\n🔗 ${link}`;
+
+  if (navigator.share) {
+    navigator.share({ title: bookTitle, text: shareText, url: link })
+      .catch(err => console.log("Share cancelled", err));
+  } else {
+    navigator.clipboard.writeText(shareText);
+    alert("Book link copied! Paste and share with your friends.");
+  }
+});
+
+
+// THINK AND GROW RICH
+document.querySelector("#think-and-grow-rich .share-btn").addEventListener("click", () => {
+  const bookTitle = "Think And Grow Rich";
+  const link = "https://audiogyan.online/#think-and-grow-rich";
+  const shareText = `📖 ${bookTitle}\n🔗 ${link}`;
+
+  if (navigator.share) {
+    navigator.share({ title: bookTitle, text: shareText, url: link })
+      .catch(err => console.log("Share cancelled", err));
+  } else {
+    navigator.clipboard.writeText(shareText);
+    alert("Book link copied! Paste and share with your friends.");
+  }
+});
+
+
+// THE SUBTLE ART OF NOT GIVING A FUCK
+document.querySelector("#the-subtle-art-of-not-giving-a-fuck .share-btn").addEventListener("click", () => {
+  const bookTitle = "The Subtle Art of Not Giving A Fuck";
+  const link = "https://audiogyan.online/#the-subtle-art-of-not-giving-a-fuck";
+  const shareText = `📖 ${bookTitle}\n🔗 ${link}`;
+
+  if (navigator.share) {
+    navigator.share({ title: bookTitle, text: shareText, url: link })
+      .catch(err => console.log("Share cancelled", err));
+  } else {
+    navigator.clipboard.writeText(shareText);
+    alert("Book link copied! Paste and share with your friends.");
   }
 });
