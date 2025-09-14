@@ -434,3 +434,44 @@ if (psychologyCard) {
     }
   });
 }
+
+
+
+// SHARE BUTTONS FOR ALL BOOK CARDS
+document.querySelectorAll(".book-card").forEach(card => {
+  const shareBtn = card.querySelector(".share-btn");
+  if (!shareBtn) return;
+
+  const bookTitle = card.querySelector("h3").innerText.trim();
+  const slug = bookTitle.replace(/\s+/g, '-').toLowerCase();
+  card.setAttribute("id", slug); // ensure unique id
+
+  shareBtn.addEventListener("click", () => {
+    const link = `https://audiogyan.online/#${slug}`;
+    const shareText = `📖 ${bookTitle}\n🔗 ${link}`;
+
+    if (navigator.share) {
+      navigator.share({
+        title: bookTitle,
+        text: shareText,
+        url: link
+      }).catch(err => console.log("Share cancelled", err));
+    } else {
+      navigator.clipboard.writeText(shareText);
+      alert("Book link copied! Paste and share with your friends.");
+    }
+  });
+});
+
+// SCROLL TO SPECIFIC CARD IF LINK HAS HASH
+window.addEventListener("load", function () {
+  const hash = decodeURIComponent(window.location.hash.substring(1));
+  if (hash) {
+    const card = document.getElementById(hash);
+    if (card) {
+      card.scrollIntoView({ behavior: "smooth", block: "center" });
+      card.classList.add("highlight-card");
+      setTimeout(() => card.classList.remove("highlight-card"), 3000);
+    }
+  }
+});

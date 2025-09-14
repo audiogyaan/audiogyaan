@@ -22,49 +22,48 @@
     <button onclick="filterBooks('LoveStories')">Love Stories</button>
   </nav>
 
-  <main class="container" id="rich-dad-poor-dad">
+  <main class="container">
 
     <!-- BOOK CARDS -->
     <div class="book-card" id="rich-dad-poor-dad" data-category="Finance">
-  <img src="assets/richdad.png" alt="Rich Dad Poor Dad">
-  <button class="play-button">▶</button>
-  <div class="book-info">
-    <h3>Rich Dad Poor Dad</h3>
-    <p>Robert Kiyosaki</p>
-    <a href="assets/frichdad1.m4a" download class="download-btn">Download</a>
-    <div class="buy-price">
-      <button class="buy-btn" onclick="location.href='buy.html?book=Rich Dad Poor Dad&price=119'">Buy Now</button>
-      <button class="favorite-btn" aria-pressed="false" title="Add to Favorites">🤍</button>
-      <button class="share-btn">Share</button>
-      <span class="price-current">₹119</span>
-      <span class="price-old">₹299</span>
+      <img src="assets/richdad.png" alt="Rich Dad Poor Dad">
+      <button class="play-button">▶</button>
+      <div class="book-info">
+        <h3>Rich Dad Poor Dad</h3>
+        <p>Robert Kiyosaki</p>
+        <a href="assets/frichdad1.m4a" download class="download-btn">Download</a>
+        <div class="buy-price">
+          <button class="buy-btn" onclick="location.href='buy.html?book=Rich Dad Poor Dad&price=119'">Buy Now</button>
+          <button class="favorite-btn" aria-pressed="false" title="Add to Favorites">🤍</button>
+          <button class="share-btn">Share</button>
+          <span class="price-current">₹119</span>
+          <span class="price-old">₹299</span>
+        </div>
+      </div>
+      <div class="library-container"></div>
+      <audio src="assets/frichdad1.m4a"></audio>
     </div>
-  </div>
-  <div class="library-container"></div>
-  <audio src="assets/frichdad1.m4a"></audio>
-</div>
-
 
     <div class="book-card" id="the-psychology-of-money" data-category="Finance Trending">
-  <img src="assets/psycomoney.png" alt="The Psychology Of Money">
-  <button class="play-button">▶</button>
-  <div class="book-info">
-    <h3>The Psychology Of Money</h3>
-    <p>Morgan Housel</p>
-    <a href="assets/fpsy1.m4a" download class="download-btn">Download</a>
-    <div class="buy-price">
-      <button class="buy-btn" onclick="location.href='buy.html?book=The Psychology Of Money&price=135'">Buy Now</button>
-      <button class="favorite-btn" aria-pressed="false" title="Add to Favorites">🤍</button> 
-      <button class="share-btn">Share</button>
-      <span class="price-current">₹135</span>
-      <span class="price-old">₹399</span>
+      <img src="assets/psycomoney.png" alt="The Psychology Of Money">
+      <button class="play-button">▶</button>
+      <div class="book-info">
+        <h3>The Psychology Of Money</h3>
+        <p>Morgan Housel</p>
+        <a href="assets/fpsy1.m4a" download class="download-btn">Download</a>
+        <div class="buy-price">
+          <button class="buy-btn" onclick="location.href='buy.html?book=The Psychology Of Money&price=135'">Buy Now</button>
+          <button class="favorite-btn" aria-pressed="false" title="Add to Favorites">🤍</button> 
+          <button class="share-btn">Share</button>
+          <span class="price-current">₹135</span>
+          <span class="price-old">₹399</span>
+        </div>
+      </div>
+      <div class="library-container"></div>
+      <audio src="assets/fpsy1.m4a"></audio>
     </div>
-  </div>
-  <div class="library-container"></div>
-  <audio src="assets/fpsy1.m4a"></audio>
-</div>
 
-    <div class="book-card" data-category="Self-Help">
+    <div class="book-card" id="atomic-habits" data-category="Self-Help">
       <img src="assets/atomichabits.png" alt="Atomic Habits">
       <button class="play-button">▶</button>
       <div class="book-info">
@@ -74,6 +73,7 @@
         <div class="buy-price">
           <button class="buy-btn" onclick="location.href='buy.html?book=Atomic Habits&price=119'">Buy Now</button>
           <button class="favorite-btn" aria-pressed="false" title="Add to Favorites">🤍</button> 
+          <button class="share-btn">Share</button>
           <span class="price-current">₹119</span>
           <span class="price-old">₹299</span>
         </div>
@@ -82,7 +82,7 @@
       <audio src="assets/fatomic1.m4a"></audio>
     </div>
 
-     <div class="book-card" data-category="LoveStories">
+    <div class="book-card" id="can-we-be-strangers-again" data-category="LoveStories">
       <img src="assets/strangers1.jpg" alt="Can We Be Strangers Again?">
       <button class="play-button">▶</button>
       <div class="book-info">
@@ -92,6 +92,7 @@
         <div class="buy-price">
           <button class="buy-btn" onclick="location.href='buy.html?book=Can We Be Strangers Again?&price=119'">Buy Now</button>
           <button class="favorite-btn" aria-pressed="false" title="Add to Favorites">🤍</button> 
+          <button class="share-btn">Share</button>
           <span class="price-current">₹119</span>
           <span class="price-old">₹299</span>
         </div>
@@ -100,7 +101,7 @@
       <audio src="assets/strangerspart1.m4a"></audio>
     </div>
 
-    <div class="book-card" data-category="Self-Help">
+    <div class="book-card" id="eat-that-froge" data-category="Self-Help">
       <img src="assets/frog.png" alt="Eat That Froge">
       <button class="play-button">▶</button>
       <div class="book-info">
@@ -110,6 +111,7 @@
         <div class="buy-price">
           <button class="buy-btn" onclick="location.href='buy.html?book=Eat That Froge&price=120'">Buy Now</button>
           <button class="favorite-btn" aria-pressed="false" title="Add to Favorites">🤍</button> 
+          <button class="share-btn">Share</button>
           <span class="price-current">₹120</span>
           <span class="price-old">₹249</span>
         </div>
@@ -118,7 +120,7 @@
       <audio src="assets/eatthatfrog1.m4a"></audio>
     </div>
 
-    <div class="book-card" data-category="Spiritual Trending">
+    <div class="book-card" id="bhagwat-geeta" data-category="Spiritual Trending">
       <img src="assets/geeta.png" alt="Bhagwat Geeta">
       <button class="play-button">▶</button>
       <div class="book-info">
@@ -128,6 +130,7 @@
         <div class="buy-price">
           <button class="buy-btn" onclick="location.href='buy.html?book=Bhagwat Geeta&price=299'">Buy Now</button>
           <button class="favorite-btn" aria-pressed="false" title="Add to Favorites">🤍</button> 
+          <button class="share-btn">Share</button>
           <span class="price-current">₹299</span>
           <span class="price-old">₹499</span>
         </div>
@@ -136,8 +139,7 @@
       <audio src="assets/gita1.m4a"></audio>
     </div>
     
-     
-    <div class="book-card" data-category="Self-Help Trending">
+    <div class="book-card" id="dopamin-detox" data-category="Self-Help Trending">
       <img src="assets/dopamin.png" alt="Dopamin Detox">
       <button class="play-button">▶</button>
       <div class="book-info">
@@ -147,6 +149,7 @@
         <div class="buy-price">
           <button class="buy-btn" onclick="location.href='buy.html?book=Dopamin Detox&price=129'">Buy Now</button>
           <button class="favorite-btn" aria-pressed="false" title="Add to Favorites">🤍</button> 
+          <button class="share-btn">Share</button>
           <span class="price-current">₹129</span>
           <span class="price-old">₹249</span>
         </div>
@@ -155,8 +158,7 @@
       <audio src="assets/dopamin1.m4a"></audio>
     </div>
 
-
-     <div class="book-card" data-category="Spiritual">
+    <div class="book-card" id="the-quran" data-category="Spiritual">
       <img src="assets/quran.png" alt="The Quran">
       <button class="play-button">▶</button>
       <div class="book-info">
@@ -166,6 +168,7 @@
         <div class="buy-price">
           <button class="buy-btn" onclick="location.href='buy.html?book=The Quran&price=300'">Buy Now</button>
           <button class="favorite-btn" aria-pressed="false" title="Add to Favorites">🤍</button> 
+          <button class="share-btn">Share</button>
           <span class="price-current">₹300</span>
           <span class="price-old">₹599</span>
         </div>
@@ -174,7 +177,7 @@
       <audio src="assets/quran1.m4a"></audio>
     </div>
 
-    <div class="book-card" data-category="LoveStories">
+    <div class="book-card" id="i-dont-love-you-any-more" data-category="LoveStories">
       <img src="assets/dontlove.png" alt="I Dont Love You Any More">
       <button class="play-button">▶</button>
       <div class="book-info">
@@ -184,6 +187,7 @@
         <div class="buy-price">
           <button class="buy-btn" onclick="location.href='buy.html?book=I Dont Love You Any More&price=119'">Buy Now</button>
           <button class="favorite-btn" aria-pressed="false" title="Add to Favorites">🤍</button> 
+          <button class="share-btn">Share</button>
           <span class="price-current">₹119</span>
           <span class="price-old">₹299</span>
         </div>
@@ -192,8 +196,7 @@
       <audio src="assets/love1.m4a"></audio>
     </div>
 
-
-    <div class="book-card" data-category="Self-Help Trending">
+    <div class="book-card" id="how-to-win-friends-and-influence-people" data-category="Self-Help Trending">
       <img src="assets/winfriends.png" alt="How To Win Friends And Influence People">
       <button class="play-button">▶</button>
       <div class="book-info">
@@ -203,6 +206,7 @@
         <div class="buy-price">
           <button class="buy-btn" onclick="location.href='buy.html?book=How To Win Friends And Influence People&price=129'">Buy Now</button>
           <button class="favorite-btn" aria-pressed="false" title="Add to Favorites">🤍</button> 
+          <button class="share-btn">Share</button>
           <span class="price-current">₹129</span>
           <span class="price-old">₹349</span>
         </div>
@@ -211,8 +215,7 @@
       <audio src="assets/friend1.m4a"></audio>
     </div>
 
-
-    <div class="book-card" data-category="LoveStories">
+    <div class="book-card" id="thank-you-for-leaving" data-category="LoveStories">
       <img src="assets/thankyou.png" alt="Thank You For Leaving">
       <button class="play-button">▶</button>
       <div class="book-info">
@@ -222,6 +225,7 @@
         <div class="buy-price">
           <button class="buy-btn" onclick="location.href='buy.html?book=Thank You For Leaving&price=119'">Buy Now</button>
           <button class="favorite-btn" aria-pressed="false" title="Add to Favorites">🤍</button> 
+          <button class="share-btn">Share</button>
           <span class="price-current">₹119</span>
           <span class="price-old">₹299</span>
         </div>
@@ -230,8 +234,7 @@
       <audio src="assets/leave1.m4a"></audio>
     </div>
 
-
-    <div class="book-card" data-category="Finance Trending">
+    <div class="book-card" id="zero-to-one" data-category="Finance Trending">
       <img src="assets/zerotoone.png" alt="Zero To One">
       <button class="play-button">▶</button>
       <div class="book-info">
@@ -241,6 +244,7 @@
         <div class="buy-price">
           <button class="buy-btn" onclick="location.href='buy.html?book=Zero To One&price=140'">Buy Now</button>
           <button class="favorite-btn" aria-pressed="false" title="Add to Favorites">🤍</button> 
+          <button class="share-btn">Share</button>
           <span class="price-current">₹140</span>
           <span class="price-old">₹399</span>
         </div>
@@ -249,8 +253,7 @@
       <audio src="assets/zero2one1.m4a"></audio>
     </div>
 
-    
-    <div class="book-card" data-category="Finance">
+    <div class="book-card" id="think-and-grow-rich" data-category="Finance">
       <img src="assets/growrich.png" alt="Think And Grow Rich">
       <button class="play-button">▶</button>
       <div class="book-info">
@@ -260,6 +263,7 @@
         <div class="buy-price">
           <button class="buy-btn" onclick="location.href='buy.html?book=Think And Grow Rich&price=129'">Buy Now</button>
           <button class="favorite-btn" aria-pressed="false" title="Add to Favorites">🤍</button> 
+          <button class="share-btn">Share</button>
           <span class="price-current">₹129</span>
           <span class="price-old">₹299</span>
         </div>
@@ -268,7 +272,7 @@
       <audio src="assets/ftr1.m4a"></audio>
     </div>
 
-    <div class="book-card" data-category="Self-Help Trending">
+    <div class="book-card" id="the-subtle-art-of-not-giving-a-fuck" data-category="Self-Help Trending">
       <img src="assets/fuckingrich.png" alt="The Subtle Art of Not Giving A Fuck">
       <button class="play-button">▶</button>
       <div class="book-info">
@@ -278,6 +282,7 @@
         <div class="buy-price">
           <button class="buy-btn" onclick="location.href='buy.html?book=The Subtle Art of Not Giving A Fuck&price=129'">Buy Now</button>
           <button class="favorite-btn" aria-pressed="false" title="Add to Favorites">🤍</button> 
+          <button class="share-btn">Share</button>
           <span class="price-current">₹129</span>
           <span class="price-old">₹299</span>
         </div>
@@ -285,11 +290,6 @@
       <div class="library-container"></div>
       <audio src="assets/fuck1.m4a"></audio>
     </div>
-
-    
-
-    
-   
 
   </main>
 
@@ -309,11 +309,8 @@
   <div id="favoritesModal" class="favorites-modal" aria-hidden="true">
     <div class="favorites-content">
       <button class="close-fav" aria-label="Close favorites">✖</button>
-      <h2>🤍 Your Favorites</h2>
+      <h2>My Favorites</h2>
       <div id="favoritesList"></div>
-      <div class="fav-actions">
-        <button id="favClearAll" type="button">Clear All</button>
-      </div>
     </div>
   </div>
 

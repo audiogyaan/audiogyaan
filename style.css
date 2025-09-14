@@ -1043,3 +1043,13 @@ button:active {
   border-radius: 12px;
   transition: all 0.3s ease-in-out;
 }
+
+
+
+
+.highlight-card {
+  outline: 3px solid #fbc02d;
+  box-shadow: 0 0 20px #fbc02d;
+  border-radius: 12px;
+  transition: all 0.3s ease-in-out;
+}
