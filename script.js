@@ -349,3 +349,53 @@ function filterBooks(category) {
   renderList();
 
 })();
+
+
+
+
+// Rich Dad Poor Dad Share Button
+const richDadCard = document.getElementById("rich-dad-poor-dad");
+
+if (richDadCard) {
+  const shareBtn = richDadCard.querySelector(".share-btn");
+
+  shareBtn.addEventListener("click", function () {
+    const title = richDadCard.querySelector("h3").innerText;
+    const author = richDadCard.querySelector("p").innerText;
+    const price = richDadCard.querySelector(".price-current").innerText;
+    const img = richDadCard.querySelector("img").src;
+
+    // Ab sirf isi card ka link banega
+    const link = `https://audiogyan.online#${richDadCard.id}`;
+
+    const shareText = `📖 *${title}*
+👤 ${author}
+💰 ${price}
+🖼️ ${img}
+
+🔗 Listen here: ${link}`;
+
+    if (navigator.share) {
+      navigator.share({
+        title: title,
+        text: shareText,
+        url: link
+      }).catch(err => console.log("Share cancelled", err));
+    } else {
+      navigator.clipboard.writeText(shareText);
+      alert("Book details copied! Paste and share with your friends.");
+    }
+  });
+}
+
+// When someone opens a shared link, scroll to card
+window.addEventListener("load", function () {
+  if (window.location.hash) {
+    const card = document.querySelector(window.location.hash);
+    if (card) {
+      card.scrollIntoView({ behavior: "smooth", block: "center" });
+      card.classList.add("highlight-card");
+      setTimeout(() => card.classList.remove("highlight-card"), 3000);
+    }
+  }
+});

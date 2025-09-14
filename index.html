@@ -22,28 +22,28 @@
     <button onclick="filterBooks('LoveStories')">Love Stories</button>
   </nav>
 
-  <main class="container" id="bookContainer">
+  <main class="container" id="rich-dad-poor-dad">
 
     <!-- BOOK CARDS -->
-    <div class="book-card" data-category="Finance">
-      <img src="assets/richdad.png" alt="Rich Dad Poor Dad">
-      <button class="play-button">▶</button>
-      <div class="book-info">
-        <h3>Rich Dad Poor Dad</h3>
-        <p>Robert Kiyosaki</p>
-        <a href="assets/frichdad1.m4a" download class="download-btn">Download</a>
-        <div class="buy-price">
-         <button class="buy-btn" onclick="location.href='buy.html?book=Rich Dad Poor Dad&price=119'">Buy Now</button>
-         <button class="favorite-btn" aria-pressed="false" title="Add to Favorites">🤍</button> 
-        
-
-          <span class="price-current">₹119</span>
-          <span class="price-old">₹299</span>
-        </div>
-      </div>
-      <div class="library-container"></div>
-      <audio src="assets/frichdad1.m4a"></audio>
+    <div class="book-card" id="rich-dad-poor-dad" data-category="Finance">
+  <img src="assets/richdad.png" alt="Rich Dad Poor Dad">
+  <button class="play-button">▶</button>
+  <div class="book-info">
+    <h3>Rich Dad Poor Dad</h3>
+    <p>Robert Kiyosaki</p>
+    <a href="assets/frichdad1.m4a" download class="download-btn">Download</a>
+    <div class="buy-price">
+      <button class="buy-btn" onclick="location.href='buy.html?book=Rich Dad Poor Dad&price=119'">Buy Now</button>
+      <button class="favorite-btn" aria-pressed="false" title="Add to Favorites">🤍</button>
+      <button class="share-btn">Share</button>
+      <span class="price-current">₹119</span>
+      <span class="price-old">₹299</span>
     </div>
+  </div>
+  <div class="library-container"></div>
+  <audio src="assets/frichdad1.m4a"></audio>
+</div>
+
 
     <div class="book-card" data-category="Finance Trending">
       <img src="assets/psycomoney.png" alt="The Psychology Of Money">
