@@ -1057,33 +1057,58 @@ button:active {
 
 
 
-.book-card {
-  position: relative; /* share button ka reference point */
-}
-
+/* ===========================
+   SHARE BUTTON - MODERN STYLE
+   =========================== */
 .share-btn {
-  position: absolute;
-  top: 650px;       /* favorite button ke upar adjust karo */
-  right: 10px;    /* book card ke right side me */
-  width: 50px;
+  position: absolute;       /* Book card ke respect me */
+  bottom: 60px;             /* card ke bottom se upar */
+  right: 12px;              /* right corner me */
+  width: 50px;              /* perfect circle */
   height: 50px;
-  border-radius: 50%;  /* fully round */
+  border-radius: 50%;       /* circle shape */
   border: none;
-  background: linear-gradient(135deg, #ffcc33, #ff9900);
+  background: linear-gradient(135deg, #ffcc33, #ff9900); /* vibrant gradient */
   color: #fff;
-  font-size: 40px;
+  font-size: 22px;
+  font-weight: bold;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-  transition: all 0.3s ease;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.35), 0 0 10px #ffcc33 inset;
+  transition: all 0.3s ease, transform 0.25s ease;
+  z-index: 20;             /* hamesha play/fav ke upar */
+  pointer-events: auto;
 }
 
+/* Hover effect - glow & scale */
 .share-btn:hover {
-  transform: scale(1.1) rotate(5deg);
-  box-shadow: 0 6px 12px rgba(0,0,0,0.4);
+  transform: scale(1.15) rotate(5deg);
+  box-shadow: 0 8px 22px rgba(0,0,0,0.45),
+              0 0 20px #ffcc33 inset,
+              0 0 30px #ff9900;
+  background: linear-gradient(135deg, #ffd633, #ffb84d);
+  color: #111;
 }
 
+/* Optional: pulsating animation */
+.share-btn.animate {
+  animation: pulseShare 1.5s infinite alternate;
+}
 
+@keyframes pulseShare {
+  0% { box-shadow: 0 6px 16px rgba(0,0,0,0.35), 0 0 10px #ffcc33 inset; }
+  100% { box-shadow: 0 8px 22px rgba(0,0,0,0.45), 0 0 20px #ffcc33 inset, 0 0 30px #ff9900; }
+}
 
+/* Mobile adjustment */
+@media (max-width: 480px) {
+  .share-btn {
+    width: 44px;
+    height: 44px;
+    font-size: 18px;
+    bottom: 55px;
+    right: 10px;
+  }
+}
