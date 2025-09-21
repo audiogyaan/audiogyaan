@@ -1112,3 +1112,78 @@ button:active {
     right: 10px;
   }
 }
+.book-card {
+  position: relative; /* zaroori hai taki button card ke andar fix ho */
+  overflow: hidden;  /* fancy effects ke liye */
+}
+
+.preview-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  padding: 10px 24px;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  border-radius: 50px;
+  text-decoration: none;
+  color: #fff;
+  background: linear-gradient(45deg, #ffdd00, #ff8800, #ff0044);
+  background-size: 300% 300%;
+  box-shadow: 0 0 20px rgba(255, 136, 0, 0.8), 0 0 40px rgba(255, 68, 0, 0.6);
+  transition: all 0.35s ease-in-out;
+  animation: glowPulse 2s infinite alternate, gradientShift 4s ease infinite, floatBadge 3s ease-in-out infinite;
+  backdrop-filter: blur(6px);
+  z-index: 10;
+  cursor: pointer;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Hover Effect */
+.preview-badge:hover {
+  transform: scale(1.15) rotate(-2deg);
+  box-shadow: 0 0 35px rgba(255, 80, 0, 1), 0 0 70px rgba(255, 0, 80, 0.9);
+}
+
+/* Glow Animation */
+@keyframes glowPulse {
+  0% {
+    box-shadow: 0 0 15px rgba(255, 200, 0, 0.8), 0 0 30px rgba(255, 120, 0, 0.7);
+  }
+  100% {
+    box-shadow: 0 0 30px rgba(255, 100, 0, 1), 0 0 60px rgba(255, 0, 60, 0.95);
+  }
+}
+
+/* Gradient Shift Animation */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Floating / Hover Wave */
+@keyframes floatBadge {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+/* Optional: Text Shine */
+.preview-badge::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(120deg, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0) 60%);
+  transform: rotate(25deg) translateX(-100%);
+  transition: all 0.5s ease;
+  pointer-events: none;
+}
+
+.preview-badge:hover::before {
+  transform: rotate(25deg) translateX(200%);
+}
